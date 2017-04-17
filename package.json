@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "babel-runtime": "^6.23.0",
+    "i18next": "^7.2.3",
     "vue": "^2.2.2"
   },
   "devDependencies": {
