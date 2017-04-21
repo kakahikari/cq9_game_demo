@@ -1,3 +1,5 @@
-.test {
-  color: blue;
-}
+@import "reset";
+@import "share";
+@import "noname";
+@import "layout";
+@import "components/index";

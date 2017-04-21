@@ -1,0 +1,31 @@
+$prefix-for-webkit:    false;
+$prefix-for-mozilla:   false;
+$prefix-for-microsoft: false;
+$prefix-for-opera:     false;
+$prefix-for-spec:      true;
+
+// ------- mixin settings
+$browser-context: 14px;
+
+// ------- viewport params
+$se: 320px;
+$ori: 480px;
+$iphone5: 568px;
+$pad: 768px;
+$pc: 1280px;
+$desktop: 1280px;
+
+// ------- layout params
+$box_width: 1080px;
+$fontSize_tiny: 12px;
+$fontSize: 14px;
+$transit: .3s;
+$fonts: "Helvetica Neue", Helvetica, Arial, "Microsoft JhengHei", "微軟正黑體", "Heiti TC", sans-serif;
+$zIndex: lower, normal, fixed;
+$globalBorderRadius: 5px;
+$inputBorderWidth: 1px;
+$inputPadding: .571em;
+
+@import "color";
+@import "mix";
+@import "animate";

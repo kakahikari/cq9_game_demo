@@ -1,0 +1,22 @@
+$red: #d0021b;
+$white: #fff;
+$black: #000;
+// $marigold: #ffc107;
+
+
+// ----- global color params
+$bgc: #212121;
+$reverse_bgc: $white;
+
+$color0: $white;
+$reverse_color0: #212121;
+
+$color1: #ffd600;
+
+$inputColor: darken($color0, 20);
+$inputBGColor: $white;
+$buttonColor: rgba(0, 0, 0, .6);
+$buttonBGColor: #e0e1e2;
+
+$peaceDark: lighten(#eee, 2);
+$border-color: mix($reverse_bgc, $bgc, 18);

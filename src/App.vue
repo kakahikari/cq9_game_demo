@@ -1,11 +1,16 @@
 <template lang="pug">
-  #app
+  #app.layout__container
+    body-nav
 </template>
 
 <script>
-// import Hello from './components/Hello'
+  import bodyNav from 'components/body-nav'
 
-export default {
-  name: 'app'
-}
+  export default {
+    name: 'app',
+
+    components: {
+      bodyNav
+    }
+  }
 </script>

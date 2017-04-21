@@ -1,0 +1,53 @@
+@mixin move($name: name, $speed: 600ms, $iteration: -1, $delay: 0, $fill:  both, $direction: alternate) {
+  animation-delay: $delay;
+  animation-duration: $speed;
+  animation-name: $name;
+  @if $iteration == -1 {
+    animation-iteration-count: infinite;
+  }
+  @else {
+    animation-iteration-count: $iteration;
+  }
+  animation-fill-mode: $fill;
+  animation-direction: $direction;
+}
+@mixin action($actionName: newAction) {
+  @-webkit-keyframes #{$actionName} {
+    @content;
+  }
+  @keyframes #{$actionName} {
+    @content;
+  }
+  .#{$actionName} {
+    animation-name: $actionName;
+  }
+}
+@mixin animate($actionName: action) {
+  @if $actionName == slideInDown {
+    @include action($actionName) {
+      0% {
+        opacity: 0;
+        transform: translateY(-2000px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+  }
+  @else if $actionName == slideOutUp {
+    @include action($actionName) {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-2000px);
+      }
+    }
+  }
+  @else {
+    @include action($actionName) {
+      @content;
+    }
+  }
+}

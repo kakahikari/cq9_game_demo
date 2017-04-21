@@ -1,0 +1,49 @@
+.body-nav {
+  position: fixed;
+  top: 70px + 10px;
+  right: 50px;
+  z-index: index($zIndex, fixed);
+  @include breakpoint($pad, false) {
+    top: 16vw;
+    top: calc(2vw + 10px);
+    right: 2vw;
+  }
+}
+
+.body-nav__ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.body-nav__item {
+  $_size: 40px;
+  $_size_mobile: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $_size;
+  height: $_size;
+  margin-top: .857em;
+  font-weight: bold;
+  color: $reverse_color0;
+  cursor: pointer;
+  background-color: $color0;
+  transition: all $transit;
+  @include breakpoint($pad, false) {
+    width: $_size_mobile;
+    height: $_size_mobile;
+  }
+  &:hover,
+  &.active {
+    opacity: .5;
+  }
+  &:first-child {
+    @include hideText;
+    margin-top: 0;
+    background-color: $color1;
+    background-image: url("../images/components/body-nav/ic-home.png");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}

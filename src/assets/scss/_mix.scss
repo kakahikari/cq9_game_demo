@@ -1,0 +1,117 @@
+@charset "UTF-8";
+
+@function em($pixels, $context: $browser-context) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1em;
+}
+
+@mixin clear {
+  clear: both;
+  &:before,
+  &:after {
+    display: table;
+    content: " ";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin hideText {
+  overflow: hidden;
+  font-size: 0;
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+@mixin mid {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin pure {
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+@mixin fl {
+  position: relative;
+  float: left;
+}
+
+
+@mixin fr {
+  position: relative;
+  float: right;
+}
+
+@mixin selection {
+  &::selection {
+    @content;
+  }
+  &::-moz-selection {
+    @content;
+  }
+}
+
+@mixin noSelect {
+  @include selection {
+    background-color: transparent;
+  }
+  user-select: none;
+}
+
+@mixin selectColor($bgc: transparent, $color: transparent) {
+  @include selection {
+    color: $color;
+    background-color: $bgc;
+    @content;
+  }
+}
+
+
+@mixin retina() {
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    @content;
+  }
+}
+
+@mixin orientation($portrait: true) {
+  @media screen and ( orientation: #{ if($portrait, portrait, landscape) } ) {
+    @content;
+  }
+}
+
+@mixin breakpoint($point, $min: true)  {
+  @if $point == ie10 {
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      @content;
+    }
+  }
+  @else if $point == ie {
+    @media \0screen\,screen\9 {
+      @content;
+    }
+  }
+  @else {
+    @if $min == true {
+      @media only screen and (min-width: $point) {
+        @content;
+      }
+    }
+    @else {
+      @media only screen and (max-width: $point - 1) {
+        @content;
+      }
+    }
+  }
+}
