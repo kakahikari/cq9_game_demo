@@ -7,6 +7,9 @@ import App from './App'
 
 Vue.config.productionTip = false
 
+import VideoBg from 'vue-videobg'
+Vue.component('video-bg', VideoBg)
+
 // style
 import 'assets/scss/style.scss'
 
@@ -16,7 +19,7 @@ export const app = new Vue({
     this.$store.dispatch('setDefault', {context: this})
   },
   methods: {
-    i18n (str, language = this.$store.state.AUTH.language) {
+    i18n (str, language = this.$store.state.language) {
       return helper.i18n(str, language)
     }
   },
@@ -24,6 +27,7 @@ export const app = new Vue({
   el: '#app',
   template: '<App/>',
   components: {
-    App
+    App,
+    VideoBg
   }
 })
