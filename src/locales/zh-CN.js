@@ -1,6 +1,38 @@
 export default {
   'translation': {
     'New': '最新',
-    'Recommend': '热门推荐'
+    'Recommend': '热门推荐',
+    // game
+    'FruitKing': '钻石水果王',
+    'GodOfChess': '棋圣',
+    'VampireKiss': '血之吻',
+    'WildTarzan': '森林泰后',
+    'Mr.Rich': '金大款',
+    '1945': '1945',
+    'RaveJump': '跳起来',
+    'SoSweet': '甜蜜蜜',
+    'ZhongKui': '钟馗运财',
+    'LuckyBat': '五福临门',
+    'Wonderland': '梦游仙境2',
+    'TreasureHouse': '金玉满堂',
+    'SakuraLegend': '樱花妹子',
+    'RichWitch': '绝赢巫师',
+    'GuGuGu': '金鸡报喜',
+    'Super5': '五行',
+    'GreatLion': '祥狮献瑞',
+    'MahjongKing': '雀王',
+    'HotSpin': '风火轮',
+    '888': '发发发',
+    'LegendOfTheWolf': '野狼传说',
+    'MonkeyOfficeLegend': '庶务西游二课',
+    'YuanBao': '金元宝',
+    'RaveJump2': '跳起来2',
+    'PokerSLOT': '扑克拉霸',
+    '777': '777',
+    'Magic World': '魔法世界',
+    'God of Cookery': '食神',
+    'WaterWorld': '水世界',
+    'Warrior Legend': '三国序',
+    'Fire Chibi': '火烧连环船'
   }
 }

@@ -1,22 +1,23 @@
-// $_bg_left_width: 90px;
 $_bg_width: 600px;
 $_bg_left: 60px;
+$_header_height: 80px;
+$_container_padding: 120px;
 
 .body-container {
   position: fixed;
   top: 0;
   right: 0;
-  // display: none;
   width: 2/3 * 100vw;
-  // height: 100%;
   min-height: 100vh;
-  padding-top: 140px;
-  padding-right: 60px;
-  padding-left: 60px;
+  padding-top: $_container_padding;
+  padding-right: $fixed_btnright;
   background-color: $bgc;
   @include breakpoint($pad, false) {
     position: relative;
     width: 100%;
+    padding-top: $_container_padding / 2;
+    padding-right: $fixed_btnright_mobile;
+    padding-left: $fixed_btnright_mobile;
     background-image: url("../images/components/body-container/bg-games.png");
     background-repeat: no-repeat;
   }
@@ -41,6 +42,7 @@ $_bg_left: 60px;
 .body-container__header {
   display: flex;
   align-items: center;
+  height: $_header_height;
 }
 
 .body-container__logo {
@@ -49,8 +51,8 @@ $_bg_left: 60px;
   width: 149px;
   height: 54px;
   margin-right: $_margin-right;
-  background-image: url("../images/components/body-container/logo.png");
-  background-size: contain;
+  // background-image: url("../images/components/body-container/logo.png");
+  // background-size: contain;
   &:after {
     position: absolute;
     top: 0;
@@ -62,12 +64,27 @@ $_bg_left: 60px;
 }
 
 .body-container__search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30px;
+  input {
+    height: 2em;
+    min-width: 8em;
+    padding: $inputPadding;
+    font-size: 1.142em;
+    color: $reverse_bgc;
+    background-color: transparent;
+    border-bottom: 2px solid $reverse_bgc;
+  }
+}
+
+.body-container__search__icon {
   width: 28px;
   height: 28px;
-  margin-right: 30px;
   cursor: pointer;
   background-image: url("../images/components/body-container/ic-search.svg");
-  background-position: center;
+  background-position: center left;
   background-repeat: no-repeat;
   background-size: 20px 20px;
 }
@@ -79,11 +96,17 @@ $_bg_left: 60px;
   span {
     margin-right: 30px;
     cursor: pointer;
+    &.js--actived {
+      color: $color1;
+    }
     &:last-child {
       margin-right: 0;
     }
     &.all {
       @include hideText;
+      @include retina {
+        background-image: url("../images/components/body-container/all@3x.png");
+      }
       display: inline-block;
       width: 35px;
       height: 22px;
@@ -109,17 +132,34 @@ $_bg_left: 60px;
   justify-content: center;
   width: 1/3 * 100%;
   height: 240px;
-  span {
-    position: absolute;
-    top: 210px;
-    display: block;
-    width: 100%;
-    color: $color1;
-    text-align: center;
+  @include breakpoint($pc) {
+    width: 25%;
+  }
+}
+
+.body-container__body__top-btn {
+  @include retina {
+    background-image: url("../images/components/body-container/bt-top@3x.png");
+  }
+  position: fixed;
+  right: $fixed_btnright;
+  bottom: 40px;
+  z-index: 99;
+  width: $fixed_btnsize;
+  height: $fixed_btnsize;
+  cursor: pointer;
+  background-image: url("../images/components/body-container/bt-top.png");
+  background-size: contain;
+  @include breakpoint($pad, false) {
+    right: $fixed_btnright_mobile;
+    width: $fixed_btnsize_mobile;
+    height: $fixed_btnsize_mobile;
   }
 }
 
 .body-container__node__img {
+  position: relative;
+  display: block;
   width: 160px;
   height: 160px;
   background-position: center;
@@ -128,10 +168,22 @@ $_bg_left: 60px;
 }
 
 .body-container__node__tag {
-
+  position: absolute;
+  top: 210px;
+  display: block;
+  width: 100%;
+  span {
+    display: block;
+    width: 100%;
+    color: $color1;
+    text-align: center;
+  }
 }
 
 .body-container__wrapper {
   width: 100%;
-  height: calc(100vh - 120px);
+  height: calc(100vh - #{$_container_padding} - #{$_header_height});
+  @include breakpoint($pad, false) {
+    height: calc(100vh - #{$_container_padding/2} - #{$_header_height});
+  }
 }

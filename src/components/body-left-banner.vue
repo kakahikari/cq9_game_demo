@@ -1,6 +1,6 @@
 <template lang="pug">
   section.body-left-banner
-    video-bg.body-left-banner__video(":sources"="['static/movie/movie_sosweet.mp4']")
+    video-bg.body-left-banner__video(":sources"="['static/movie/motion_fruitking.mp4']")
 </template>
 
 <script>

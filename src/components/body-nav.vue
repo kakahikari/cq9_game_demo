@@ -2,9 +2,18 @@
   nav.body-nav
     ul.body-nav__ul
       li.body-nav__item home
-      li.body-nav__item(":class"="{'active': $store.state.language=='zh-CN'}" @click="changeLanguage('zh-CN')") 简
-      li.body-nav__item(":class"="{'active': $store.state.language=='zh-TW'}" @click="changeLanguage('zh-TW')") 繁
-      li.body-nav__item(":class"="{'active': $store.state.language=='EN'}" @click="changeLanguage('EN')") EN
+      li.body-nav__item.flag(
+        ":class"="{'js--actived': $store.state.language=='zh-CN'}"
+        ":style"="{backgroundImage: 'url(static/images/flags/cn.png)'}"
+        @click="changeLanguage('zh-CN')"
+      )
+        span 中
+      li.body-nav__item.flag(
+        ":class"="{'js--actived': $store.state.language=='EN'}"
+        ":style"="{backgroundImage: 'url(static/images/flags/uk.png)'}"
+        @click="changeLanguage('EN')"
+      )
+        span EN
 </template>
 
 <script>

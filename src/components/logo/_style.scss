@@ -1,0 +1,45 @@
+@import "../../assets/scss/share";
+
+* {
+  transition: transform $transit;
+}
+
+aside {
+  z-index: index($zIndex, logo);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 149px;
+  height: 54px;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+  // filter: drop-shadow( 2px 2px 5px rgba(#000, .2) );
+  transform-origin: 50% 0;
+}
+
+g,
+path,
+polygon {
+  transition: all $transit;
+  fill-rule: nonzero;
+  fill: rgba($white, 1);
+}
+
+.cq9-C {
+  // fill: rgba($black, .8);
+  fill: url(#gcq9-c);
+}
+
+.cq9-Q {
+  // fill: rgba($black, .8);
+  fill: url(#gcq9-q);
+}
+
+.cq9-9 {
+  // fill: rgba($black, .8);
+  fill: url(#gcq9-9);
+}
