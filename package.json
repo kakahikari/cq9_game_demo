@@ -17,7 +17,7 @@
     "i18next": "^7.2.3",
     "v-bar": "^2.0.0",
     "vue": "^2.2.2",
-    "vue-videobg": "github:OwenMelbz/vue-videobg#patch-1",
+    "vue-videobg": "github:kakahikari/vue-videobg#dev",
     "vuex": "^2.3.0"
   },
   "devDependencies": {

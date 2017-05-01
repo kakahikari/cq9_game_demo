@@ -2,6 +2,9 @@ export default {
   'translation': {
     'New': '最新',
     'Recommend': '热门推荐',
+    'Please select game mode': '请选择游戏模式',
+    'Normal game': '一般游戏',
+    'Featured game': '特色游戏',
     // game
     'FruitKing': '钻石水果王',
     'GodOfChess': '棋圣',

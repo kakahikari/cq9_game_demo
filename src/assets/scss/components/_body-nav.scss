@@ -46,7 +46,11 @@
     background-image: url("../images/components/body-nav/ic-home.png");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 26px 22px;
+    background-size: 20px 17px;
+    transition: none;
+    &:hover {
+      background-size: 26px 22px;
+    }
   }
   &.flag {
     background-color: transparent;

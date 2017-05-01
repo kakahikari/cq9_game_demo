@@ -6,14 +6,24 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    language: ''
+    language: '',
+    gameSelectedActive: false,
+    selectedGameCode: 0
   },
   mutations: {
     SET_DEFAULT (state) {
       state.language = DEFAULT_LNG
+      state.gameSelectedActive = false
+      state.selectedGameCode = 0
     },
     SET_LANGUAGE (state, payload) {
       state.language = payload
+    },
+    SET_GAMESELECTEDACTIVE (state, payload) {
+      state.gameSelectedActive = payload
+    },
+    SET_SELECTGAMECODE (state, payload) {
+      state.selectedGameCode = payload
     }
   },
   actions: {

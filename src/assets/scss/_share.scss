@@ -21,14 +21,14 @@ $fontSize_tiny: 12px;
 $fontSize: 14px;
 $transit: .3s;
 $fonts: "Helvetica Neue", Helvetica, Arial, "Microsoft JhengHei", "微軟正黑體", "Heiti TC", sans-serif;
-$zIndex: lower, normal, fixed;
+$zIndex: lower, normal, fixed, overlay-wrapper, overlay;
 $globalBorderRadius: 0;
 $inputBorderWidth: 1px;
 $inputPadding: .571em;
 
 $fixed_btnsize: 40px;
 $fixed_btnsize_mobile: 30px;
-$fixed_btnright: 50px;
+$fixed_btnright: 20px;
 $fixed_btnright_mobile: 2vw;
 
 @import "color";

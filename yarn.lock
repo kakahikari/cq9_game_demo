@@ -4972,9 +4972,9 @@ vue-template-es2015-compiler@^1.2.2:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.5.2.tgz#a0a6c50c941d2a4abda963f2f42c337ac450ee95"
 
-"vue-videobg@github:OwenMelbz/vue-videobg#patch-1":
+"vue-videobg@github:kakahikari/vue-videobg#dev":
   version "1.0.1"
-  resolved "https://codeload.github.com/OwenMelbz/vue-videobg/tar.gz/57507e3a4efde4c3a19974262dc9926ec4ba13cc"
+  resolved "https://codeload.github.com/kakahikari/vue-videobg/tar.gz/feeb14b085420cd216f5efdc9273ba56863ba2ec"
   dependencies:
     babel-runtime "^5.8.0"
     vue "^1.0.0"
