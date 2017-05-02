@@ -32,6 +32,7 @@
           li.body-container__node(
             v-for="node in nodes"
             v-bind:key="node"
+            ":class"="'game'+node.gamecode"
             @click="gameSelected(Number(node.gamecode))"
           )
             .body-container__node__img(":style"="{'background-image': 'url('+node.src+')'}")
@@ -113,7 +114,19 @@
         this.searchFocus = val
       },
       goTop () {
-        this.$refs.vBar.$el.getElementsByClassName('bar--wrapper')[0].scrollTop = 0
+        let start = this.$refs.vBar.$el.getElementsByClassName('bar--wrapper')[0].scrollTop
+        let intervel = setInterval(() => {
+          if (start > 1000) {
+            start -= 50
+          } else if (start > 500) {
+            start -= 30
+          } else if (start > 0) {
+            start -= 20
+          } else {
+            clearInterval(intervel)
+          }
+          this.$refs.vBar.$el.getElementsByClassName('bar--wrapper')[0].scrollTop = start
+        }, 10)
       },
       gameSelected (val) {
         this.$store.commit('SET_SELECTGAMECODE', val)

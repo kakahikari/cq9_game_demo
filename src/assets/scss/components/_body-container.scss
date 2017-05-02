@@ -52,8 +52,6 @@ $_container_padding: 120px;
   height: 54px;
   min-width: 149px;
   margin-right: $_margin-right;
-  // background-image: url("../images/components/body-container/logo.png");
-  // background-size: contain;
   &:after {
     position: absolute;
     top: 0;
@@ -168,6 +166,7 @@ $_container_padding: 120px;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    padding-right: .5em;
   }
 }
 
@@ -311,12 +310,225 @@ $_container_padding: 120px;
 
 .body-container__node__img {
   position: relative;
+  z-index: index($zIndex, normal);
   display: block;
   width: 160px;
   height: 160px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  backface-visibility: hidden;
+  .body-container__node:hover & {
+    transform: rotateY(180deg);
+    transition: all $transit*2;
+    &:after {
+      opacity: 1;
+      transform: rotateY(180deg);
+      transition: all $transit*2;
+    }
+  }
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: index($zIndex, lower);
+    width: 100%;
+    height: 100%;
+    background-size: left 100%;
+    content: "";
+    opacity: 0;
+    transform: rotateY(0);
+  }
+}
+
+$games: (
+  1: (
+    gamecode: 1,
+    frames: 15,
+    width: 2400px
+  ),
+  2: (
+    gamecode: 2,
+    frames: 15,
+    width: 2400px
+  ),
+  3: (
+    gamecode: 3,
+    frames: 15,
+    width: 2400px
+  ),
+  4: (
+    gamecode: 4,
+    frames: 15,
+    width: 2400px
+  ),
+  5: (
+    gamecode: 5,
+    frames: 15,
+    width: 2400px
+  ),
+  6: (
+    gamecode: 6,
+    frames: 15,
+    width: 2400px
+  ),
+  7: (
+    gamecode: 7,
+    frames: 15,
+    width: 2400px
+  ),
+  8: (
+    gamecode: 8,
+    frames: 15,
+    width: 2400px
+  ),
+  9: (
+    gamecode: 9,
+    frames: 15,
+    width: 2400px
+  ),
+  10: (
+    gamecode: 10,
+    frames: 15,
+    width: 2400px
+  ),
+  11: (
+    gamecode: 11,
+    frames: 15,
+    width: 2400px
+  ),
+  12: (
+    gamecode: 12,
+    frames: 15,
+    width: 2400px
+  ),
+  13: (
+    gamecode: 13,
+    frames: 15,
+    width: 2400px
+  ),
+  14: (
+    gamecode: 14,
+    frames: 15,
+    width: 2400px
+  ),
+  15: (
+    gamecode: 15,
+    frames: 15,
+    width: 2400px
+  ),
+  16: (
+    gamecode: 16,
+    frames: 15,
+    width: 2400px
+  ),
+  17: (
+    gamecode: 17,
+    frames: 15,
+    width: 2400px
+  ),
+  18: (
+    gamecode: 18,
+    frames: 15,
+    width: 2400px
+  ),
+  19: (
+    gamecode: 19,
+    frames: 15,
+    width: 2400px
+  ),
+  20: (
+    gamecode: 20,
+    frames: 15,
+    width: 2400px
+  ),
+  21: (
+    gamecode: 21,
+    frames: 15,
+    width: 2400px
+  ),
+  22: (
+    gamecode: 22,
+    frames: 15,
+    width: 2400px
+  ),
+  23: (
+    gamecode: 23,
+    frames: 15,
+    width: 2400px
+  ),
+  24: (
+    gamecode: 24,
+    frames: 15,
+    width: 2400px
+  ),
+  25: (
+    gamecode: 25,
+    frames: 15,
+    width: 2377px
+  ),
+  26: (
+    gamecode: 26,
+    frames: 15,
+    width: 2400px
+  ),
+  27: (
+    gamecode: 27,
+    frames: 15,
+    width: 2400px
+  ),
+  28: (
+    gamecode: 28,
+    frames: 15,
+    width: 2400px
+  ),
+  29: (
+    gamecode: 29,
+    frames: 15,
+    width: 2400px
+  ),
+  30: (
+    gamecode: 30,
+    frames: 15,
+    width: 2400px
+  ),
+  31: (
+    gamecode: 31,
+    frames: 15,
+    width: 2400px
+  ),
+  32: (
+    gamecode: 32,
+    frames: 15,
+    width: 2400px
+  ),
+  33: (
+    gamecode: 33,
+    frames: 15,
+    width: 2400px
+  ),
+  34: (
+    gamecode: 34,
+    frames: 15,
+    width: 2400px
+  ),
+);
+@each $name, $value in $games {
+  .game#{#{map-get($value, gamecode)}} {
+    .body-container__node__img {
+      &:after {
+        background-image: url("../images/animation/#{map-get($value, gamecode)}.png");
+      }
+    }
+    &:hover {
+      .body-container__node__img:after {
+        animation: play#{map-get($value, gamecode)} 1.75s steps(#{map-get($value, frames)}) 1;
+      }
+    }
+  }
+  @keyframes play#{map-get($value, gamecode)} {
+    100% { background-position: -#{map-get($value, width)}; }
+  }
 }
 
 .body-container__node__tag {
