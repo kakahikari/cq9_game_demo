@@ -183,9 +183,9 @@ $_container_padding: 120px;
   @include breakpoint($pc) {
     width: 25%;
   }
-  &:hover {
-    background-image: linear-gradient(to bottom, rgba($black, 0), rgba($black, .54));
-  }
+  // &:hover {
+  //   background-image: linear-gradient(to bottom, rgba($black, 0), rgba($black, .54));
+  // }
 }
 
 .body-container__body__top-btn {
