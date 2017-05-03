@@ -17,7 +17,7 @@
           {src: 'static/movie/motion_888.mp4', gamecode: 20},
           {src: 'static/movie/motion_fruitking.mp4', gamecode: 1},
           {src: 'static/movie/motion_greatlion.mp4', gamecode: 17},
-          {src: 'static/movie/motion_home.mp4', gamecode: 0},
+          {src: 'static/movie/motion_home.mp4', gamecode: 39},
           {src: 'static/movie/motion_hotspin.mp4', gamecode: 19},
           {src: 'static/movie/motion_luckybat.mp4', gamecode: 10},
           {src: 'static/movie/motion_ravejump.mp4', gamecode: 7},
