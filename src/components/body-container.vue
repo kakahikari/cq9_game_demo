@@ -22,7 +22,7 @@
             span {{ $root.i18n('Please select game mode') }}
             div
               a.normal(
-                ":href"="'https://h5.c.cqgame.games/' + $store.state.selectedGameCode + '?token=guest' + '&language=' + $store.state.language.toLowerCase()"
+                ":href"="'https://h5.c.cqgame.games/' + $store.state.selectedGameCode + '?token=guest123' + '&language=' + $store.state.language.toLowerCase()"
                 target="blank"
               ) {{ $root.i18n('Normal game') }}
               a.featured(
