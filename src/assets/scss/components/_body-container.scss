@@ -1,7 +1,10 @@
 $_bg_width: 600px;
 $_bg_left: 60px;
 $_header_height: 80px;
+$_header_height_mobile: 140px;
 $_container_padding: 120px;
+$_node_img_size: 160px;
+$_node_margin: 20px;
 
 .body-container {
   position: fixed;
@@ -15,7 +18,8 @@ $_container_padding: 120px;
   @include breakpoint($pad, false) {
     position: relative;
     width: 100%;
-    padding-top: $_container_padding + $fixed_btnsize_mobile + 10px;
+    // padding-top: $_container_padding + $fixed_btnsize_mobile + 10px;
+    padding-top: $fixed_btnright_mobile;
     padding-right: $fixed_btnright_mobile;
     padding-left: $fixed_btnright_mobile;
     background-image: url("../images/components/body-container/bg-games.png");
@@ -43,6 +47,10 @@ $_container_padding: 120px;
   display: flex;
   align-items: center;
   height: $_header_height;
+  @include breakpoint($pad, false) {
+    display: block;
+    height: $_header_height_mobile;
+  }
 }
 
 .body-container__logo {
@@ -52,6 +60,10 @@ $_container_padding: 120px;
   height: 54px;
   min-width: 149px;
   margin-right: $_margin-right;
+  @include breakpoint($pad, false) {
+    margin-top: 10px;
+    margin-right: 0;
+  }
   &:after {
     position: absolute;
     top: 0;
@@ -59,6 +71,9 @@ $_container_padding: 120px;
     height: 100%;
     border: solid 1px $white;
     content: "";
+    @include breakpoint($pad, false) {
+      display: none;
+    }
   }
 }
 
@@ -66,7 +81,14 @@ $_container_padding: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 2em;
   margin-right: 30px;
+  @include breakpoint($pad, false) {
+    justify-content: flex-start;
+    margin: 1em 0;
+    margin-right: 0;
+    margin-left: 1em;
+  }
   input {
     height: 2em;
     min-width: 6em;
@@ -77,6 +99,9 @@ $_container_padding: 120px;
     background-color: transparent;
     border-bottom: 2px solid $reverse_bgc;
     transition: all $transit;
+    @include breakpoint($pad, false) {
+      padding: 0 $inputPadding;
+    }
     &:focus {
       border-bottom: 2px solid $color1;
     }
@@ -128,8 +153,13 @@ $_container_padding: 120px;
 .body-container__sort {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   font-size: 1.142em;
+  line-height: 2em;
   transition: all $transit*2;
+  @include breakpoint($pad, false) {
+    margin-left: 1em;
+  }
   span {
     margin-right: 30px;
     cursor: pointer;
@@ -173,19 +203,20 @@ $_container_padding: 120px;
 .body-container__node {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: row;
   justify-content: center;
-  width: 1/3 * 100%;
-  height: 240px;
+  width: calc(50% - #{$_node_margin*2});
+  height: $_node_img_size + 30px;
+  margin: $_node_margin;
   cursor: pointer;
   transition: all $transit*2;
-  @include breakpoint($pc) {
-    width: 25%;
+  @include breakpoint($iphone6) {
+    width: calc(1/3 * 100% - #{$_node_margin*2});
   }
-  // &:hover {
-  //   background-image: linear-gradient(to bottom, rgba($black, 0), rgba($black, .54));
-  // }
+  @include breakpoint($pc) {
+    width: calc(25% - #{$_node_margin*2});
+  }
 }
 
 .body-container__body__top-btn {
@@ -239,6 +270,9 @@ $_container_padding: 120px;
   font-size: 1.142em;
   color: $reverse_color0;
   background-color: $color1;
+  @include breakpoint($pad, false) {
+    width: 248px;
+  }
   span,
   div {
     margin-bottom: 1.428em;
@@ -257,8 +291,16 @@ $_container_padding: 120px;
     border: solid 2px $bgc;
     border-radius: 2px;
     transition: all $transit;
+    @include breakpoint($pad, false) {
+      display: flex;
+      margin-right: 0;
+      margin-bottom: 1.25em;
+    }
     &:last-child {
       margin-right: 0;
+      @include breakpoint($pad, false) {
+        margin-bottom: 0;
+      }
     }
     &:hover {
       color: $reverse_bgc;
@@ -465,7 +507,7 @@ $games: (
   25: (
     gamecode: 25,
     frames: 15,
-    width: 2377px
+    width: 2400px
   ),
   26: (
     gamecode: 26,
@@ -512,6 +554,36 @@ $games: (
     frames: 15,
     width: 2400px
   ),
+  41: (
+    gamecode: 41,
+    frames: 15,
+    width: 2400px
+  ),
+  42: (
+    gamecode: 42,
+    frames: 15,
+    width: 2400px
+  ),
+  43: (
+    gamecode: 43,
+    frames: 15,
+    width: 2400px
+  ),
+  46: (
+    gamecode: 46,
+    frames: 15,
+    width: 2400px
+  ),
+  47: (
+    gamecode: 47,
+    frames: 15,
+    width: 2400px
+  ),
+  50: (
+    gamecode: 50,
+    frames: 15,
+    width: 2400px
+  )
 );
 @each $name, $value in $games {
   .game#{#{map-get($value, gamecode)}} {
@@ -523,6 +595,7 @@ $games: (
     &:hover {
       .body-container__node__img:after {
         animation: play#{map-get($value, gamecode)} 1.75s steps(#{map-get($value, frames)}) 1;
+        animation-delay: $transit;
       }
     }
   }
@@ -533,7 +606,8 @@ $games: (
 
 .body-container__node__tag {
   position: absolute;
-  top: 210px;
+  // bottom: $_node_margin;
+  bottom: 0;
   display: block;
   width: 100%;
   span {
@@ -548,6 +622,6 @@ $games: (
   width: 100%;
   height: calc(100vh - #{$_container_padding} - #{$_header_height});
   @include breakpoint($pad, false) {
-    height: calc(100vh - #{$_container_padding/2} - #{$_header_height});
+    height: calc(100vh - #{$_container_padding/2} - #{$_header_height_mobile});
   }
 }
