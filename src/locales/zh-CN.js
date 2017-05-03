@@ -1,7 +1,8 @@
 export default {
   'translation': {
     'New': '最新',
-    'Recommend': '热门推荐',
+    'Recommend': '推荐',
+    'Hot': '热门',
     'Please select game mode': '请选择游戏模式',
     'Normal game': '一般游戏',
     'Featured game': '特色游戏',
@@ -36,6 +37,14 @@ export default {
     'God of Cookery': '食神',
     'WaterWorld': '水世界',
     'Warrior Legend': '三国序',
-    'Fire Chibi': '火烧连环船'
+    'Fire Chibi': '火烧连环船',
+    'God of War': '武圣',
+    'Detective Dee': '通天神探狄仁杰',
+    'Gophers War': '地鼠战役',
+    'Water War': '水球大战',
+    'Sherlock Holmes': '福尔摩斯',
+    'Wolf Moon': '狼月',
+    'Pharaoh\'s Gold': '法老宝藏',
+    'Good Forture': '鸿福齐天'
   }
 }

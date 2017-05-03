@@ -11,6 +11,7 @@
         span.all(@click="changeSort('all')" ":class"="{'js--actived': sort=='all'}") All
         span(@click="changeSort('new')" ":class"="{'js--actived': sort=='new'}") {{ $root.i18n('New') }}
         span(@click="changeSort('recommend')" ":class"="{'js--actived': sort=='recommend'}") {{ $root.i18n('Recommend') }}
+        span(@click="changeSort('hot')" ":class"="{'js--actived': sort=='hot'}") {{ $root.i18n('Hot') }}
     v-bar(wrapper="body-container__wrapper" ref="vBar")
       .body-container__body
         .body-container__body__top-btn(@click="goTop()")
@@ -39,6 +40,7 @@
             .body-container__node__tag
               span(v-if="node.new") {{ $root.i18n('New') }}
               span(v-if="node.recommend") {{ $root.i18n('Recommend') }}
+              span(v-if="node.hot") {{ $root.i18n('Hot') }}
 </template>
 
 <script>
@@ -53,7 +55,8 @@
       return {
         sort: 'all',
         list: [],
-        recommend: ['1', '7', '8', '10', '14', '17', '19', '20'],
+        hot: ['1', '8', '17', '19'],
+        recommend: ['7', '10', '14', '20'],
         searchActive: false,
         searchFocus: false,
         search: ''
@@ -73,6 +76,9 @@
             }
             if (this.recommend.indexOf(node.gamecode) > -1) {
               row.recommend = 1
+            }
+            if (this.hot.indexOf(node.gamecode) > -1) {
+              row.hot = 1
             }
             if (array.length - index < 7) {
               row.new = 1

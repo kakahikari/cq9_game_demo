@@ -347,9 +347,86 @@ class GameService {
           },
           'status': true
         }, {
+          'gamecode': '31',
+          'gamehall': 'cq9',
+          'gamename': 'God of War',
+          'gameplat': 'WEB,MOBILE',
+          'gametech': 'html5',
+          'gametype': 'slot',
+          'info': {
+            'lang': ['en', 'tw', 'cn']
+          },
+          'status': true
+        }, {
+          'gamecode': '32',
+          'gamehall': 'cq9',
+          'gamename': 'Detective Dee',
+          'gameplat': 'WEB,MOBILE',
+          'gametech': 'html5',
+          'gametype': 'slot',
+          'info': {
+            'lang': ['en', 'tw', 'cn']
+          },
+          'status': true
+        }, {
           'gamecode': '33',
           'gamehall': 'cq9',
           'gamename': 'Fire Chibi',
+          'gameplat': 'WEB,MOBILE',
+          'gametech': 'html5',
+          'gametype': 'slot',
+          'info': {
+            'lang': ['en', 'tw', 'cn']
+          },
+          'status': true
+        }, {
+          'gamecode': '34',
+          'gamehall': 'cq9',
+          'gamename': 'Gophers War',
+          'gameplat': 'WEB,MOBILE',
+          'gametech': 'html5',
+          'gametype': 'slot',
+          'info': {
+            'lang': ['en', 'tw', 'cn']
+          },
+          'status': true
+        }, {
+          'gamecode': '41',
+          'gamehall': 'cq9',
+          'gamename': 'Water War',
+          'gameplat': 'WEB,MOBILE',
+          'gametech': 'html5',
+          'gametype': 'slot',
+          'info': {
+            'lang': ['en', 'tw', 'cn']
+          },
+          'status': true
+        }, {
+          'gamecode': '42',
+          'gamehall': 'cq9',
+          'gamename': 'Sherlock Holmes',
+          'gameplat': 'WEB,MOBILE',
+          'gametech': 'html5',
+          'gametype': 'slot',
+          'info': {
+            'lang': ['en', 'tw', 'cn']
+          },
+          'status': true
+        }, {
+          'gamecode': '46',
+          'gamehall': 'cq9',
+          'gamename': 'Wolf Moon',
+          'gameplat': 'WEB,MOBILE',
+          'gametech': 'html5',
+          'gametype': 'slot',
+          'info': {
+            'lang': ['en', 'tw', 'cn']
+          },
+          'status': true
+        }, {
+          'gamecode': '50',
+          'gamehall': 'cq9',
+          'gamename': 'Good Forture',
           'gameplat': 'WEB,MOBILE',
           'gametech': 'html5',
           'gametype': 'slot',

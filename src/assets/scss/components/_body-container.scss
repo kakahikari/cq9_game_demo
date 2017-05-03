@@ -2,6 +2,8 @@ $_bg_width: 600px;
 $_bg_left: 60px;
 $_header_height: 80px;
 $_container_padding: 120px;
+$_node_img_size: 160px;
+$_node_margin: 20px;
 
 .body-container {
   position: fixed;
@@ -173,19 +175,17 @@ $_container_padding: 120px;
 .body-container__node {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: row;
   justify-content: center;
-  width: 1/3 * 100%;
-  height: 240px;
+  width: calc(1/3 * 100% - #{$_node_margin*2});
+  height: $_node_img_size + 30px;
+  margin: $_node_margin;
   cursor: pointer;
   transition: all $transit*2;
   @include breakpoint($pc) {
-    width: 25%;
+    width: calc(25% - #{$_node_margin*2});
   }
-  // &:hover {
-  //   background-image: linear-gradient(to bottom, rgba($black, 0), rgba($black, .54));
-  // }
 }
 
 .body-container__body__top-btn {
@@ -512,6 +512,36 @@ $games: (
     frames: 15,
     width: 2400px
   ),
+  41: (
+    gamecode: 41,
+    frames: 15,
+    width: 2400px
+  ),
+  42: (
+    gamecode: 42,
+    frames: 15,
+    width: 2400px
+  ),
+  43: (
+    gamecode: 43,
+    frames: 15,
+    width: 2400px
+  ),
+  46: (
+    gamecode: 46,
+    frames: 15,
+    width: 2400px
+  ),
+  47: (
+    gamecode: 47,
+    frames: 15,
+    width: 2400px
+  ),
+  50: (
+    gamecode: 50,
+    frames: 15,
+    width: 2400px
+  )
 );
 @each $name, $value in $games {
   .game#{#{map-get($value, gamecode)}} {
@@ -523,6 +553,7 @@ $games: (
     &:hover {
       .body-container__node__img:after {
         animation: play#{map-get($value, gamecode)} 1.75s steps(#{map-get($value, frames)}) 1;
+        animation-delay: $transit;
       }
     }
   }
@@ -533,7 +564,8 @@ $games: (
 
 .body-container__node__tag {
   position: absolute;
-  top: 210px;
+  // bottom: $_node_margin;
+  bottom: 0;
   display: block;
   width: 100%;
   span {
