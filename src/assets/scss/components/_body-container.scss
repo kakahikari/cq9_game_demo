@@ -3,8 +3,7 @@ $_bg_left: 60px;
 $_header_height: 80px;
 $_header_height_mobile: 140px;
 $_container_padding: 120px;
-$_node_img_size: 160px;
-$_node_margin: 20px;
+$_node_margin: 25px;
 
 .body-container {
   position: fixed;
@@ -98,7 +97,8 @@ $_node_margin: 20px;
     color: $reverse_bgc;
     background-color: transparent;
     border-bottom: 2px solid $reverse_bgc;
-    transition: all $transit;
+    transition: opacity $transit;
+    // transition: width 2s;
     @include breakpoint($pad, false) {
       padding: 0 $inputPadding;
     }
@@ -107,11 +107,6 @@ $_node_margin: 20px;
     }
   }
 }
-
-// .input-enter-active,
-// .input-leave-active {
-//   transition: all $transit;
-// }
 
 .input-enter,
 .input-leave-active {
@@ -207,15 +202,17 @@ $_node_margin: 20px;
   flex-direction: row;
   justify-content: center;
   width: calc(50% - #{$_node_margin*2});
-  height: $_node_img_size + 30px;
-  margin: $_node_margin;
+  // height: $_node_img_size_mobile + 30px;
+  margin: $_node_margin $_node_margin $_node_margin + 25px;
   cursor: pointer;
   transition: all $transit*2;
   @include breakpoint($iphone6) {
     width: calc(1/3 * 100% - #{$_node_margin*2});
+    // height: $_node_img_size_pad + 30px;
   }
   @include breakpoint($pc) {
     width: calc(25% - #{$_node_margin*2});
+    // height: $_node_img_size + 30px;
   }
 }
 
@@ -227,15 +224,15 @@ $_node_margin: 20px;
   right: $fixed_btnright;
   bottom: 40px;
   z-index: 99;
-  width: $fixed_btnsize;
-  height: $fixed_btnsize;
+  width: $fixed_btnsize*1.25;
+  height: $fixed_btnsize*1.25;
   cursor: pointer;
   background-image: url("../images/components/body-container/bt-top.png");
   background-size: contain;
   @include breakpoint($pad, false) {
     right: $fixed_btnright_mobile;
-    width: $fixed_btnsize_mobile;
-    height: $fixed_btnsize_mobile;
+    // width: $fixed_btnsize_mobile;
+    // height: $fixed_btnsize_mobile;
   }
 }
 
@@ -354,8 +351,8 @@ $_node_margin: 20px;
   position: relative;
   z-index: index($zIndex, normal);
   display: block;
-  width: 160px;
-  height: 160px;
+  width: 100%;
+  padding-top: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -376,7 +373,7 @@ $_node_margin: 20px;
     z-index: index($zIndex, lower);
     width: 100%;
     height: 100%;
-    background-size: left 100%;
+    background-size: auto 100%;
     content: "";
     opacity: 0;
     transform: rotateY(0);
@@ -594,20 +591,23 @@ $games: (
     }
     &:hover {
       .body-container__node__img:after {
-        animation: play#{map-get($value, gamecode)} 1.75s steps(#{map-get($value, frames)}) 1;
+        // animation: play#{map-get($value, gamecode)} 1.75s steps(#{map-get($value, frames)}) 1;
+        animation: play 1.75s steps(#{map-get($value, frames)}) 1;
         animation-delay: $transit;
       }
     }
   }
-  @keyframes play#{map-get($value, gamecode)} {
-    100% { background-position: -#{map-get($value, width)}; }
-  }
+}
+@keyframes play {
+  // @keyframes play#{map-get($value, gamecode)} {
+  // 100% { background-position: -#{map-get($value, frames)}00%; }
+  100% { background-position: -1500%; }
 }
 
 .body-container__node__tag {
   position: absolute;
   // bottom: $_node_margin;
-  bottom: 0;
+  bottom: -25px;
   display: block;
   width: 100%;
   span {

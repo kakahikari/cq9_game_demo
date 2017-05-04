@@ -20,6 +20,12 @@
   export default {
     name: 'body-nav',
 
+    data () {
+      return {
+        MobileAvtive: false
+      }
+    },
+
     methods: {
       changeLanguage (language) {
         this.$store.dispatch('setLanguage', language)
