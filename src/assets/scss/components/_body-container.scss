@@ -21,7 +21,8 @@ $_node_margin: 25px;
     padding-top: $fixed_btnright_mobile;
     padding-right: $fixed_btnright_mobile;
     padding-left: $fixed_btnright_mobile;
-    background-image: url("../images/components/body-container/bg-games.png");
+    background-color: transparent;
+    // background-image: url("../images/components/body-container/bg-games.png");
     background-repeat: no-repeat;
   }
   &:before {
