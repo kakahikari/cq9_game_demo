@@ -5,7 +5,10 @@
   min-height: 100vh;
   background-color: $black;
   @include breakpoint($pad, false) {
-    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    filter: blur(3px) brightness(.5);
   }
 }
 
@@ -14,4 +17,7 @@
   top: 0;
   width: 1/3 * 100vw;
   height: 100%;
+  @include breakpoint($pad, false) {
+    width: 100vw;
+  }
 }
