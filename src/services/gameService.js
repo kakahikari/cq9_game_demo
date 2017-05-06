@@ -391,6 +391,61 @@ class GameService {
           },
           'status': true
         }, {
+          'gamecode': '35',
+          'gamehall': 'cq9',
+          'gamename': 'Crazy NuoZha',
+          'gameplat': 'WEB,MOBILE',
+          'gametech': 'html5',
+          'gametype': 'slot',
+          'info': {
+            'lang': ['en', 'tw', 'cn']
+          },
+          'status': true
+        }, {
+          'gamecode': '36',
+          'gamehall': 'cq9',
+          'gamename': 'RageOfRiches',
+          'gameplat': 'WEB,MOBILE',
+          'gametech': 'html5',
+          'gametype': 'slot',
+          'info': {
+            'lang': ['en', 'tw', 'cn']
+          },
+          'status': true
+        }, {
+          'gamecode': '37',
+          'gamehall': 'cq9',
+          'gamename': 'All Wilds',
+          'gameplat': 'WEB,MOBILE',
+          'gametech': 'html5',
+          'gametype': 'slot',
+          'info': {
+            'lang': ['en', 'tw', 'cn']
+          },
+          'status': true
+        }, {
+          'gamecode': '39',
+          'gamehall': 'cq9',
+          'gamename': 'Apsaras',
+          'gameplat': 'WEB,MOBILE',
+          'gametech': 'html5',
+          'gametype': 'slot',
+          'info': {
+            'lang': ['en', 'tw', 'cn']
+          },
+          'status': true
+        }, {
+          'gamecode': '40',
+          'gamehall': 'cq9',
+          'gamename': 'Darts Champion',
+          'gameplat': 'WEB,MOBILE',
+          'gametech': 'html5',
+          'gametype': 'slot',
+          'info': {
+            'lang': ['en', 'tw', 'cn']
+          },
+          'status': true
+        }, {
           'gamecode': '41',
           'gamehall': 'cq9',
           'gamename': 'Water War',
@@ -413,9 +468,53 @@ class GameService {
           },
           'status': true
         }, {
+          'gamecode': '43',
+          'gamehall': 'cq9',
+          'gamename': 'Gong He Xin Xi',
+          'gameplat': 'WEB,MOBILE',
+          'gametech': 'html5',
+          'gametype': 'slot',
+          'info': {
+            'lang': ['en', 'tw', 'cn']
+          },
+          'status': true
+        }, {
+          'gamecode': '44',
+          'gamehall': 'cq9',
+          'gamename': 'Fruit King Deluxe',
+          'gameplat': 'WEB,MOBILE',
+          'gametech': 'html5',
+          'gametype': 'slot',
+          'info': {
+            'lang': ['en', 'tw', 'cn']
+          },
+          'status': true
+        }, {
+          'gamecode': '45',
+          'gamehall': 'cq9',
+          'gamename': 'Super8',
+          'gameplat': 'WEB,MOBILE',
+          'gametech': 'html5',
+          'gametype': 'slot',
+          'info': {
+            'lang': ['en', 'tw', 'cn']
+          },
+          'status': true
+        }, {
           'gamecode': '46',
           'gamehall': 'cq9',
           'gamename': 'Wolf Moon',
+          'gameplat': 'WEB,MOBILE',
+          'gametech': 'html5',
+          'gametype': 'slot',
+          'info': {
+            'lang': ['en', 'tw', 'cn']
+          },
+          'status': true
+        }, {
+          'gamecode': '47',
+          'gamehall': 'cq9',
+          'gamename': 'Pharaoh\'s Gold',
           'gameplat': 'WEB,MOBILE',
           'gametech': 'html5',
           'gametype': 'slot',
