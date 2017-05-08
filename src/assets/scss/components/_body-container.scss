@@ -605,15 +605,37 @@ $games: (
 
 .body-container__node__tag {
   position: absolute;
-  // bottom: $_node_margin;
-  bottom: -25px;
-  display: block;
-  width: 100%;
+  top: -5px;
+  right: -5px;
+  z-index: index($zIndex, fixed);
   span {
     display: block;
-    width: 100%;
+    width: 40px;
+    height: 40px;
+    // padding: .33em 1em;
+    // padding-left: 2em;
+    // font-size: .71em;
     color: $color1;
-    text-align: center;
+    // text-align: center;
+    background-color: rgba($bgc, .8);
+    // background-position: .75em center;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid $color1;
+    border-radius: 50%;
+    // transform: rotate(24deg);
+    &.new {
+      background-image: url("../images/components/body-container/ic-new.svg");
+      background-size: 32px auto;
+    }
+    &.recommend {
+      background-image: url("../images/components/body-container/ic-recommend.svg");
+      background-size: 20px auto;
+    }
+    &.hot {
+      background-image: url("../images/components/body-container/ic-fire.svg");
+      background-size: 15px auto;
+    }
   }
 }
 

@@ -39,9 +39,9 @@
           )
             .body-container__node__img(":style"="{'background-image': 'url('+node.src+')'}")
             .body-container__node__tag
-              span(v-if="node.new") {{ $root.i18n('New') }}
-              span(v-if="node.recommend") {{ $root.i18n('Recommend') }}
-              span(v-if="node.hot") {{ $root.i18n('Hot') }}
+              span.new(v-if="node.new")
+              span.recommend(v-if="node.recommend")
+              span.hot(v-if="node.hot")
 </template>
 
 <script>
