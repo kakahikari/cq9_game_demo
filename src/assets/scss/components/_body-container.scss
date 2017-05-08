@@ -84,10 +84,11 @@ $_node_margin: 25px;
   min-height: 2em;
   margin-right: 30px;
   @include breakpoint($pad, false) {
+    display: inline-flex;
     justify-content: flex-start;
-    margin: 1em 0;
+    height: 70px;
     margin-right: 0;
-    margin-left: 1em;
+    vertical-align: top;
   }
   input {
     height: 2em;
@@ -98,8 +99,7 @@ $_node_margin: 25px;
     color: $reverse_bgc;
     background-color: transparent;
     border-bottom: 2px solid $reverse_bgc;
-    transition: opacity $transit;
-    // transition: width 2s;
+    // transition: all $transit*2;
     @include breakpoint($pad, false) {
       padding: 0 $inputPadding;
     }
@@ -107,11 +107,6 @@ $_node_margin: 25px;
       border-bottom: 2px solid $color1;
     }
   }
-}
-
-.input-enter,
-.input-leave-active {
-  opacity: 0;
 }
 
 .body-container__search__icon {
@@ -143,18 +138,18 @@ $_node_margin: 25px;
   background-image: url("../images/components/body-container/bt-close-02.png");
   background-position: center;
   background-size: contain;
-  transition: all $transit;
 }
 
 .body-container__sort {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   flex-wrap: wrap;
   font-size: 1.142em;
   line-height: 2em;
-  transition: all $transit*2;
   @include breakpoint($pad, false) {
+    height: 70px;
     margin-left: 1em;
+    vertical-align: top;
   }
   span {
     margin-right: 30px;
@@ -177,6 +172,9 @@ $_node_margin: 25px;
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
+      @include breakpoint($pad, false) {
+        height: 16px;
+      }
       &.js--actived {
         @include retina {
           background-image: url("../images/components/body-container/all-active@3x.png");
@@ -204,7 +202,7 @@ $_node_margin: 25px;
   justify-content: center;
   width: calc(50% - #{$_node_margin*2});
   // height: $_node_img_size_mobile + 30px;
-  margin: $_node_margin $_node_margin $_node_margin + 25px;
+  margin: $_node_margin;
   cursor: pointer;
   transition: all $transit*2;
   @include breakpoint($iphone6) {
@@ -623,6 +621,6 @@ $games: (
   width: 100%;
   height: calc(100vh - #{$_container_padding} - #{$_header_height});
   @include breakpoint($pad, false) {
-    height: calc(100vh - #{$_container_padding/2} - #{$_header_height_mobile});
+    height: calc(100vh - #{$_container_padding} - #{$_header_height_mobile});
   }
 }

@@ -4,15 +4,15 @@
       logo.body-container__logo
       .body-container__search
         span.body-container__search__icon(@click="toggleSearch()" ":class"="{'js--actived': searchFocus}")
-        transition(name="input-fade")
-          input(v-if="searchActive" v-model="search" @focus="setSearchFocus(true)" @blur="setSearchFocus(false)")
-        span.body-container__search__close(v-if="searchActive" @click="toggleSearch()" ":class"="{'js--actived': searchFocus}")
-      transition(name="sort")
+        template(v-if="searchActive")
+          input(v-model="search" @focus="setSearchFocus(true)" @blur="setSearchFocus(false)")
+          span.body-container__search__close(@click="toggleSearch()" ":class"="{'js--actived': searchFocus}")
+      transition(name="sort-fade" mode="out-in")
         .body-container__sort(v-if="!searchActive")
+          span.all(@click="changeSort('all')" ":class"="{'js--actived': sort=='all'}") All
           span(@click="changeSort('hot')" ":class"="{'js--actived': sort=='hot'}") {{ $root.i18n('Hot') }}
           span(@click="changeSort('recommend')" ":class"="{'js--actived': sort=='recommend'}") {{ $root.i18n('Recommend') }}
           span(@click="changeSort('new')" ":class"="{'js--actived': sort=='new'}") {{ $root.i18n('New') }}
-          span.all(@click="changeSort('all')" ":class"="{'js--actived': sort=='all'}") All
     v-bar(wrapper="body-container__wrapper" ref="vBar")
       .body-container__body
         .body-container__body__top-btn(@click="goTop()")
@@ -159,7 +159,23 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   .node-transition-leave-active {
     opacity: 0;
+  }
+  .sort-fade-enter,
+  .sort-fade-enter-active,
+  .sort-fade-leave,
+  .sort-fade-leave-active {
+    transition: all .6s;
+  }
+
+  .sort-fade-leave-active,
+  .sort-fade-enter {
+    opacity: 0;
+  }
+
+  .sort-fade-leave {
+    display: none;
   }
 </style>
