@@ -16,20 +16,21 @@
     v-bar(wrapper="body-container__wrapper" ref="vBar")
       .body-container__body
         .body-container__body__top-btn(@click="goTop()")
-        .body-container__body__game-selected(v-if="$store.state.gameSelectedActive")
-          .body-container__body__game-selected__wrapper(@click="gameSelectedCancel()")
-          .body-container__body__game-selected__container
-            .close(@click="gameSelectedCancel()")
-            span {{ $root.i18n('Please select game mode') }}
-            div
-              a.normal(
-                ":href"="'https://h5.c.cqgame.games/' + $store.state.selectedGameCode + '?token=guest123' + '&language=' + $store.state.language.toLowerCase()"
-                target="blank"
-              ) {{ $root.i18n('Normal game') }}
-              a.featured(
-                ":href"="'https://h5.c.cqgame.games/' + $store.state.selectedGameCode + '?token=guest' + '&language=' + $store.state.language.toLowerCase()"
-                target="blank"
-              ) {{ $root.i18n('Featured game') }}
+        transition(name="game-selected-fade" mode="out-in")
+          .body-container__body__game-selected(v-if="$store.state.gameSelectedActive")
+            .body-container__body__game-selected__wrapper(@click="gameSelectedCancel()")
+            .body-container__body__game-selected__container
+              .close(@click="gameSelectedCancel()")
+              span {{ $root.i18n('Please select game mode') }}
+              div
+                a.normal(
+                  ":href"="'https://h5.c.cqgame.games/' + $store.state.selectedGameCode + '?token=guest123' + '&language=' + $store.state.language.toLowerCase()"
+                  target="blank"
+                ) {{ $root.i18n('Normal game') }}
+                a.featured(
+                  ":href"="'https://h5.c.cqgame.games/' + $store.state.selectedGameCode + '?token=guest' + '&language=' + $store.state.language.toLowerCase()"
+                  target="blank"
+                ) {{ $root.i18n('Featured game') }}
         transition-group(name="node-transition" tag="ul")
           li.body-container__node(
             v-for="node in nodes"
@@ -163,6 +164,8 @@
   .node-transition-leave-active {
     opacity: 0;
   }
+  .game-selected-fade-enter,
+  .game-selected-fade-enter-active,
   .sort-fade-enter,
   .sort-fade-enter-active,
   .sort-fade-leave,
@@ -170,7 +173,8 @@
     transition: all .6s;
   }
 
-  .sort-fade-leave-active,
+  .game-selected-fade-leave-active,
+  .game-selected-fade-enter,
   .sort-fade-enter {
     opacity: 0;
   }
