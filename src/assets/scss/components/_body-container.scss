@@ -372,7 +372,7 @@ $_node_margin: 25px;
     z-index: index($zIndex, lower);
     width: 100%;
     height: 100%;
-    background-size: auto 100%;
+    background-size: 100% auto;
     content: "";
     opacity: 0;
     transform: rotateY(0);
@@ -550,6 +550,31 @@ $games: (
     frames: 15,
     width: 2400px
   ),
+  35: (
+    gamecode: 35,
+    frames: 15,
+    width: 2400px
+  ),
+  36: (
+    gamecode: 36,
+    frames: 15,
+    width: 2400px
+  ),
+  37: (
+    gamecode: 37,
+    frames: 15,
+    width: 2400px
+  ),
+  39: (
+    gamecode: 39,
+    frames: 15,
+    width: 2400px
+  ),
+  40: (
+    gamecode: 40,
+    frames: 15,
+    width: 2400px
+  ),
   41: (
     gamecode: 41,
     frames: 15,
@@ -562,6 +587,16 @@ $games: (
   ),
   43: (
     gamecode: 43,
+    frames: 15,
+    width: 2400px
+  ),
+  44: (
+    gamecode: 44,
+    frames: 15,
+    width: 2400px
+  ),
+  45: (
+    gamecode: 45,
     frames: 15,
     width: 2400px
   ),
@@ -600,7 +635,7 @@ $games: (
 @keyframes play {
   // @keyframes play#{map-get($value, gamecode)} {
   // 100% { background-position: -#{map-get($value, frames)}00%; }
-  100% { background-position: -1500%; }
+  100% { background-position: 0 -1500%; }
 }
 
 .body-container__node__tag {
