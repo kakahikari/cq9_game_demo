@@ -88,6 +88,14 @@
             }
             out.push(row)
           })
+          // Ocean Adventrue
+          let row = {
+            src: 'static/images/games/' + language + '/u01.png',
+            gamename: 'Ocean Adventrue',
+            gamecode: 'u01',
+            recommend: 1
+          }
+          out.push(row)
           if (this.search !== '') {
             out = out.filter(node => this.$root.i18n(node.gamename).toLowerCase().indexOf(this.search.toLowerCase()) > -1)
           } else {
