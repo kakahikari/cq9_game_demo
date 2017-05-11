@@ -53,6 +53,11 @@ export default {
     'Super8': '超级发',
     'Wolf Moon': '狼月',
     'Pharaoh\'s Gold': '法老宝藏',
-    'Good Forture': '鸿福齐天'
+    'Lotus': '莲',
+    'Loneyly Planet': '寂寞星球',
+    'Good Forture': '鸿福齐天',
+    'Ecstatic Circus': '嗨爆大马戏',
+    'Jump High': '跳高高',
+    'Love Night': '来电99'
   }
 }

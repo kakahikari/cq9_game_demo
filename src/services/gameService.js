@@ -523,9 +523,64 @@ class GameService {
           },
           'status': true
         }, {
+          'gamecode': '48',
+          'gamehall': 'cq9',
+          'gamename': 'Lotus',
+          'gameplat': 'WEB,MOBILE',
+          'gametech': 'html5',
+          'gametype': 'slot',
+          'info': {
+            'lang': ['en', 'tw', 'cn']
+          },
+          'status': true
+        }, {
+          'gamecode': '49',
+          'gamehall': 'cq9',
+          'gamename': 'Loneyly Planet',
+          'gameplat': 'WEB,MOBILE',
+          'gametech': 'html5',
+          'gametype': 'slot',
+          'info': {
+            'lang': ['en', 'tw', 'cn']
+          },
+          'status': true
+        }, {
           'gamecode': '50',
           'gamehall': 'cq9',
           'gamename': 'Good Forture',
+          'gameplat': 'WEB,MOBILE',
+          'gametech': 'html5',
+          'gametype': 'slot',
+          'info': {
+            'lang': ['en', 'tw', 'cn']
+          },
+          'status': true
+        }, {
+          'gamecode': '51',
+          'gamehall': 'cq9',
+          'gamename': 'Ecstatic Circus',
+          'gameplat': 'WEB,MOBILE',
+          'gametech': 'html5',
+          'gametype': 'slot',
+          'info': {
+            'lang': ['en', 'tw', 'cn']
+          },
+          'status': true
+        }, {
+          'gamecode': '52',
+          'gamehall': 'cq9',
+          'gamename': 'Jump High',
+          'gameplat': 'WEB,MOBILE',
+          'gametech': 'html5',
+          'gametype': 'slot',
+          'info': {
+            'lang': ['en', 'tw', 'cn']
+          },
+          'status': true
+        }, {
+          'gamecode': '53',
+          'gamehall': 'cq9',
+          'gamename': 'Love Night',
           'gameplat': 'WEB,MOBILE',
           'gametech': 'html5',
           'gametype': 'slot',
