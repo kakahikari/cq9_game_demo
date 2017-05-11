@@ -36,7 +36,7 @@
   // &.active {
   //   opacity: .5;
   // }
-  &:first-child {
+  &.home {
     @include hideText;
     @include retina {
       background-image: url("../images/components/body-nav/ic-home@3x.png");

@@ -1,7 +1,7 @@
 <template lang="pug">
   nav.body-nav
     ul.body-nav__ul
-      li.body-nav__item home
+      //- li.body-nav__item.home home
       li.body-nav__item.flag(
         ":class"="{'js--actived': $store.state.language=='zh-CN'}"
         ":style"="{backgroundImage: 'url(static/images/flags/cn.png)'}"
