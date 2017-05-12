@@ -58,6 +58,7 @@ export default {
     'Good Forture': '鸿福齐天',
     'Ecstatic Circus': '嗨爆大马戏',
     'Jump High': '跳高高',
-    'Love Night': '来电99'
+    'Love Night': '来电99',
+    'Oceanic Overload': '海霸传奇'
   }
 }
