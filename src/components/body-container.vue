@@ -22,7 +22,12 @@
             .body-container__body__game-selected__container
               .close(@click="gameSelectedCancel()")
               span {{ $root.i18n('Please select game mode') }}
-              div
+              div(v-if="$store.state.selectedGameCode == 'u01'")
+                a.normal(
+                  ":href"="'https://unity.c.cqgame.games/demo/OceanAdventure/?token=guest123'"
+                  target="blank"
+                ) {{ $root.i18n('Normal game') }}
+              div(v-else)
                 a.normal(
                   ":href"="'https://h5.c.cqgame.games/' + $store.state.selectedGameCode + '?token=guest123' + '&language=' + $store.state.language.toLowerCase()"
                   target="blank"
@@ -36,7 +41,7 @@
             v-for="node in nodes"
             v-bind:key="node"
             ":class"="'game'+node.gamecode"
-            @click="gameSelected(Number(node.gamecode))"
+            @click="gameSelected(node.gamecode)"
           )
             .body-container__node__img(":style"="{'background-image': 'url('+node.src+')'}")
             .body-container__node__tag
@@ -57,7 +62,7 @@
       return {
         sort: 'all',
         list: [],
-        new: ['31', '35', '36', '40', '44', '45', '52', '53'],
+        new: ['35', '36', '53'],
         hot: ['1', '7', '8', '9', '10', '12', '15', '24'],
         recommend: ['29', '27', '33', '37', '39', '48', '49', '51'],
         searchActive: false,
@@ -91,7 +96,7 @@
           // Ocean Adventrue
           let row = {
             src: 'static/images/games/' + language + '/u01.png',
-            gamename: 'Ocean Adventrue',
+            gamename: 'Oceanic Overload',
             gamecode: 'u01',
             recommend: 1
           }
