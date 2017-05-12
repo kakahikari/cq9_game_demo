@@ -639,6 +639,11 @@ $games: (
     gamecode: 53,
     frames: 15,
     width: 2400px
+  ),
+  u01: (
+    gamecode: u01,
+    frames: 15,
+    width: 2400px
   )
 );
 @each $name, $value in $games {
