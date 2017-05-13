@@ -413,7 +413,7 @@ class GameService {
           },
           'status': true
         }, {
-          'gamecode': '37',
+          'gamecode': '38',
           'gamehall': 'cq9',
           'gamename': 'All Wilds',
           'gameplat': 'WEB,MOBILE',
