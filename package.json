@@ -1,12 +1,12 @@
 {
   "name": "cq9_game_demo",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "kakahikari <kakahikari@gmail.com>",
   "private": true,
   "scripts": {
     "clean": "rm -rf node_modules/* && rm -rf dist/*",
-    "init": "yarn run clean && yarn install && node setVersion",
+    "init": "yarn run clean && yarn upgrade && node setVersion",
     "dev": "node build/dev-server.js",
     "build": "node setVersion && rm -rf dist/* && node build/build.js",
     "lint": "eslint --ext .js,.vue src"
