@@ -4,6 +4,7 @@ $_header_height: 80px;
 $_header_height_mobile: 140px;
 $_container_padding: 120px;
 $_node_margin: 20px;
+$_node_margin_mobile: 10px;
 
 .body-container {
   position: fixed;
@@ -22,7 +23,7 @@ $_node_margin: 20px;
     padding-right: $fixed_btnright_mobile;
     padding-left: $fixed_btnright_mobile;
     background-color: transparent;
-    // background-image: url("../images/components/body-container/bg-games.png");
+    background-image: url("../images/components/body-container/bg-games.png");
     background-repeat: no-repeat;
   }
   &:before {
@@ -200,17 +201,18 @@ $_node_margin: 20px;
   align-items: flex-start;
   flex-direction: row;
   justify-content: center;
-  width: calc(50% - #{$_node_margin*2});
+  width: calc(50% - #{$_node_margin_mobile*2});
   // height: $_node_img_size_mobile + 30px;
-  margin: $_node_margin;
+  margin: $_node_margin_mobile;
   cursor: pointer;
   transition: all $transit*2;
   @include breakpoint($iphone6) {
-    width: calc(1/3 * 100% - #{$_node_margin*2});
+    width: calc(1/3 * 100% - #{$_node_margin_mobile*2});
     // height: $_node_img_size_pad + 30px;
   }
   @include breakpoint($pc) {
     width: calc(25% - #{$_node_margin*2});
+    margin: $_node_margin;
     // height: $_node_img_size + 30px;
   }
 }
